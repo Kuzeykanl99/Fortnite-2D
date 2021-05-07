@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<script src="jquery-3.5.1.min.js"></script>
+		<script language="javascript" src="model.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<style>
+			#ui_login { display:block; }
+			#ui_register { display:none; }
+			#ui_play { display:none; }
+		</style>
+		<title>f0rt9it32d</title>
+	</head>
+	<body bgcolor="ffffff">
+		<div id="ui_nav">
+			<nav>
+				<ul>
+					<input type="submit" class="button" id="game_change" value="Game">
+					<input type="submit" class="button" id="profile_change" value="Profile">
+					<input type="submit" class="button" id="leaderboard_change" value="Leaderboard">
+					<input type="submit" class="button" id="instructions_change" value="Instructions">
+					<input type="submit" class="button" id="logout_change" value="Log Out">
+				</ul>
+			</nav>
+		</div>
+		<h1>f0rt9it32d</h1>
+		<div id="ui_login" class="container">
+			<h1>Login</h1>
+			<div class="page">
+				<center>
+					<input type="text" id="username" placeholder="User Name" /><br>
+					<input type="password" id="password" placeholder="Password" /><br><br>
+					<input type="submit" class="button" id="loginSubmit" value="Login"><br><br><br>
+					<p>Don't have an account yet?</p>
+					<input type="submit" class="button" id="register_change" value="Register">
+				</center>
+			</div>
+		</div>
+
+		<div id="ui_register" class="container">
+			<h1>Register</h1>
+			<div class="page">
+				<center>
+					<p>Please fill in this form to create an account.</p>
+					<hr>
+					<input type="text" placeholder="Enter Username" name="username" id="usr" required>
+					<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+					<input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required><br><br>
+					
+					<a>Select Skill:</a>
+					<div id='skills'>
+						<input type="radio" id="beginner" name="skill" value="beginner">
+						<label for="beginner">Beginner</label>	
+						<input type="radio" id="intermediate" name="skill" value="intermediate">
+						<label for="intermediate">Intermediate</label>
+						<input type="radio" id="advanced" name="skill" value="advanced">
+						<label for="advanced">Advanced</label><br><br>
+					</div>
+					
+
+					<label>
+						Enter your birthday:
+						<input type="date" id="date" name="bday">
+					</label><br><br>
+
+					<input type="submit" class="button" id="register" value="Register"/><br>
+					<hr>
+					<p>Already have an account?</p>
+					<input type="submit" class="button" id="login_change" value="Sign In">
+				</center>
+			</div>
+		</div>
+		<div id="ui_instructions" class="container">
+			<h1>Instructions</h1>
+			<div class="page">
+				<center>
+					<p>In order to play the game, you have to control the player. Here are instructions how to play:</p>
+					<p>Make sure to pause the game while switching to profile and leaderboard</p>
+					<table class ="leaderboard" id="instructions">
+						<thead>
+							<tr>
+							<th>Button</th>
+							<th>Functionality</th>
+							</tr>
+						</thead>
+						<tbody id="instructions_body">
+							<tr>
+								<th><img id="w" src="images/letter_w.png" width="50px" height="50px"></th>
+								<th>Move up</th>
+							</tr>
+							<tr>
+								<th><img id="a" src="images/letter_a.png" width="50px" height="50px"></th>
+								<th>Move left</th>
+							</tr>
+							<tr>
+								<th><img id="s" src="images/letter_s.png" width="50px" height="50px"></th>
+								<th>Move down</th>
+							</tr>
+							<tr>
+								<th><img id="d" src="images/letter_d.png" width="50px" height="50px"></th>
+								<th>Move right</th>
+							</tr>
+							<tr>
+								<th><img id="left_click" src="images/left_click.jpg" width="50px" height="50px"></th>
+								<th>Shoot</th>
+							</tr>
+							<tr>
+								<th><img id="r" src="images/letter_r.png" width="50px" height="50px"></th>
+								<th>Restart the game</th>
+							</tr>
+							<tr>
+								<th><img id="escape" src="images/esc.png" width="50px" height="50px"></th>
+								<th>Pause/continue the game</th>
+							</tr>
+						</tbody>
+					</table>
+				</center>
+			</div>
+		</div>
+		<div id="ui_profile" class="container">
+			<h1>Profile</h1>
+			<div class="page">
+				<center>
+					<p>Please fill in this form to create an account.</p>
+					<hr>
+					<p id="p_username">Username</p>
+					<label id="profile_username">Username</label>
+					<hr>
+					<hr>
+					<p id="p_score">Your Score</p>
+					<label id="profile_score">0</label>
+					<hr>
+					<input type="password" placeholder="Enter New Password" name="psw" id="new_psw" required>
+					<input type="password" placeholder="Repeat New Password" name="psw-repeat" id="new_psw-repeat" required><br><br>
+					
+					<a>Select Skill:</a>
+					<div id='skills'>
+						<input type="radio" id="profile_beginner" name="skill" value="beginner" checked="checked">
+						<label for="profile_beginner">Beginner</label>	
+						<input type="radio" id="profile_intermediate" name="skill" value="intermediate">
+						<label for="profile_intermediate">Intermediate</label>
+						<input type="radio" id="profile_advanced" name="skill" value="advanced">
+						<label for="profile_advanced">Advanced</label><br><br>
+					</div>
+					
+
+					<label>
+						Birthday:
+						<input type="date" id="profile_date" name="bday">
+					</label><br><br>
+
+					<input type="submit" class="button" id="update" value="Update Information"/><br>
+					<hr>
+					<input type="submit" class="button" id="delete" value="Delete Account"/><br>
+				</center>
+			</div>
+		</div>
+		<div id="ui_leaderboard" class="container">
+			<h1>Leaderboard</h1>
+			<hr>
+			<center>
+				<table class ="leaderboard" id="leaderboard">
+					<thead>
+						<tr>
+						<th>User</th>
+						<th>Score</th>
+						</tr>
+					</thead>
+					<tbody id="leaderboard_body"></tbody>
+				</table>
+			</center>
+		</div>
+		<div id="ui_play">
+			<div>
+				<center>
+					<p id="score_tag">Score:</p>
+					<label id="score">0</label>
+				</center>
+			</div>
+			<div style="display:none;">
+				<img id="source"
+					 src="images/image(2).png">
+			</div>
+			<div style="display:none;">
+				<img id="enemy1"
+					 src="images/enemy1idle1.png">
+			</div>
+			<div style="display:none;">
+				<img id="source_bg"
+					 src="images/grass.png">
+			</div>
+			<div style="display:none;">
+				<img id="gun"
+					 src="images/Thompson.png">
+			</div>
+			<div style="display:none;">
+				<img id="medishot"
+					 src="images/medi.jpg">
+			</div>
+			<center>
+				<canvas id="stage" width="800" height="800" style="border:1px solid black;"> </canvas>
+			</center>
+		</div>
+	</body>
+</html>

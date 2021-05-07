@@ -1,0 +1,85 @@
+body {
+	margin: 10px;
+	border: 1px solid gray;
+}
+
+h1 {
+    font-family: 'Asap', sans-serif;
+    color: teal;
+    text-align: center;
+}
+
+nav {
+	color: teal;
+	background-color: white;
+	font: bold 34px sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	border-color: gray;
+	border-style: solid;
+	border-width: 0.5px;
+	text-decoration: none;
+}
+
+nav ul {
+	color: white;
+	background-color: teal;
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 0.25em;
+	margin: 3px 3px 3px 3px;
+	padding: 12px 12px;
+	border-radius:2%;
+	text-decoration: none;
+}
+
+nav ul:hover {
+	color: teal;
+	background-color:white;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	text-decoration: none;
+}
+
+.leadscore {
+	text-align: right;
+}
+
+.page input[type=text], input[type=password] {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.button{
+	background-color: teal;
+	color: white;
+	padding: 10px 16px;
+	margin: auto;
+	border: none;
+	cursor: pointer;
+	width: 25%;
+	text-decoration: none;
+}
+
+.button:hover{
+	opacity: 0.8;
+}
+
+.container {
+    border: 5px solid rgb(255, 255, 255);
+    background-color: rgb(199, 242, 244);
+    padding: 50px 50px 50px 50px;
+    margin: auto;
+    border-radius: 10px;
+    top: 10%;
+    position: relative;
+    width: 50%;
+}
